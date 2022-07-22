@@ -1,6 +1,7 @@
 package system;
 
-import marketplace.Marketplace;
+import system.instances.Product;
+import system.instances.User;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,9 +20,22 @@ public class MarketplaceSystem {
         return userMap;
     }
 
+    public History getHistory() {
+        return history;
+    }
+
+    public User getUserById(int userId){
+        return userMap.get(userId);
+    }
+
+    public Product getProductById(int productId){
+        return productMap.get(productId);
+    }
+
     public MarketplaceSystem(){
         productMap = new HashMap<>();
         userMap = new HashMap<>();
+        history = new History();
 
         productMap.put(1, new Product(1, "Pencil", 45));
         productMap.put(2, new Product(2, "Case", 10));

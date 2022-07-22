@@ -1,6 +1,6 @@
-package system;
+package system.instances;
 
-public class User {
+public class User extends Instance{
 
     private int id;
     private String firstName;
@@ -15,10 +15,19 @@ public class User {
     }
 
     @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
     public String toString() {
         return "id: " + id + ", " +
                 "firstName: " + firstName + ", " +
                 "lastName: " + lastName + ", " +
                 "balance: " + balance;
+    }
+
+    public void spendMoney(int moneyToSpend){
+        balance -= moneyToSpend;
     }
 }

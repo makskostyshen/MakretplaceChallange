@@ -1,6 +1,6 @@
-package system;
+package system.instances;
 
-public class Product {
+public class Product extends Instance{
 
     private int id;
     private String name;
@@ -10,6 +10,15 @@ public class Product {
         this.id = id;
         this.name = name;
         this.price = price;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    @Override
+    public int getId() {
+        return id;
     }
 
     @Override
