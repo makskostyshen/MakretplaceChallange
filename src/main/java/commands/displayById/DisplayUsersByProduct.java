@@ -2,8 +2,8 @@ package commands.displayById;
 
 import commands.Command;
 import system.MarketplaceSystem;
-import system.Components.Product;
-import system.Components.User;
+import system.Product;
+import system.User;
 
 import java.util.ArrayList;
 import java.util.Collection;

@@ -4,7 +4,7 @@ import commands.Command;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import system.MarketplaceSystem;
-import system.Components.Product;
+import system.Product;
 
 import java.util.HashMap;
 import java.util.Map;

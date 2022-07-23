@@ -2,7 +2,7 @@ package commands.displayById;
 
 import commands.Command;
 import system.MarketplaceSystem;
-import system.Components.Product;
+import system.Product;
 
 import java.util.Map;
 

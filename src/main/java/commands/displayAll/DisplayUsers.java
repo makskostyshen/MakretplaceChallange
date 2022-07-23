@@ -2,6 +2,7 @@ package commands.displayAll;
 
 import commands.Command;
 import system.MarketplaceSystem;
+import system.User;
 
 import java.util.Collection;
 
@@ -9,10 +10,10 @@ public class DisplayUsers implements Command {
 
     @Override
     public void execute(MarketplaceSystem system) {
-        Collection collection = system.getUserMap().values();
+        Collection<User> collection = system.getUserMap().values();
 
-        for(Object o: collection){
-            System.out.println(o);
+        for(User user: collection){
+            System.out.println(user);
         }
     }
 }

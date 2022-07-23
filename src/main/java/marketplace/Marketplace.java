@@ -35,8 +35,6 @@ public class Marketplace {
 
             marketplace.executeCommand(new DisplayUsers());
             marketplace.executeCommand(new DisplayUsersByProduct(2));
-//            marketplace.executeCommand(new DisplayUsersByProduct(1));
-//            marketplace.executeCommand(new DisplayProductsByUser(1));
         }
         catch (Exception e){
             e.printStackTrace();

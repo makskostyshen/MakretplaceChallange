@@ -1,8 +1,5 @@
 package system;
 
-import system.Components.Product;
-import system.Components.User;
-
 import java.util.HashMap;
 import java.util.Map;
 

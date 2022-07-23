@@ -1,10 +1,10 @@
-package system.Components;
+package system;
 
-public class Product{
+public class Product {
 
-    private int id;
-    private String name;
-    private int price;
+    private final int id;
+    private final String name;
+    private final int price;
 
     public Product(int id, String name, int price) {
         this.id = id;
@@ -14,10 +14,6 @@ public class Product{
 
     public int getPrice() {
         return price;
-    }
-
-    public int getId() {
-        return id;
     }
 
     @Override
