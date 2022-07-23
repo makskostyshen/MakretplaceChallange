@@ -2,7 +2,6 @@ package commands.displayAll;
 
 import commands.Command;
 import system.MarketplaceSystem;
-import system.instances.Instance;
 
 import java.util.Collection;
 

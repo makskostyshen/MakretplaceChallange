@@ -2,8 +2,11 @@ package commands.displayById;
 
 import commands.Command;
 import system.MarketplaceSystem;
-import system.instances.User;
+import system.Components.Product;
+import system.Components.User;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class DisplayUsersByProduct implements Command {
@@ -17,7 +20,19 @@ public class DisplayUsersByProduct implements Command {
     @Override
     public void execute(MarketplaceSystem system) {
 
-        List<User> users = system.getHistory().getUsersByProduct(productId);
-        System.out.println(users);
+        List<User> usersBoughtProducts = new ArrayList<>();
+        Collection <User> usersAll = system.getUserMap().values();
+
+        for (User user: usersAll){
+            if(hasBoughtProduct(user, productId)){
+                usersBoughtProducts.add(user);
+            }
+        }
+        System.out.println(usersBoughtProducts);
+    }
+
+
+    private boolean hasBoughtProduct(User user, int productId){
+        return user.getBoughtProducts().containsKey(new Product(productId, "", 1));
     }
 }

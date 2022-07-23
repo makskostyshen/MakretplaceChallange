@@ -1,7 +1,7 @@
 package system;
 
-import system.instances.Product;
-import system.instances.User;
+import system.Components.Product;
+import system.Components.User;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +10,6 @@ public class MarketplaceSystem {
 
     private Map<Integer, Product> productMap;
     private Map<Integer, User> userMap;
-    private History history;
 
     public Map<Integer, Product> getProductMap() {
         return productMap;
@@ -20,9 +19,6 @@ public class MarketplaceSystem {
         return userMap;
     }
 
-    public History getHistory() {
-        return history;
-    }
 
     public User getUserById(int userId){
         return userMap.get(userId);
@@ -35,7 +31,11 @@ public class MarketplaceSystem {
     public MarketplaceSystem(){
         productMap = new HashMap<>();
         userMap = new HashMap<>();
-        history = new History();
+
+        putInitialValues();
+    }
+
+    private void putInitialValues() {
 
         productMap.put(1, new Product(1, "Pencil", 45));
         productMap.put(2, new Product(2, "Case", 10));
@@ -44,6 +44,5 @@ public class MarketplaceSystem {
         userMap.put(1, new User(1, "Maks", "Killman", 300));
         userMap.put(2, new User(2, "Melissa", "Choppa", 350));
         userMap.put(3, new User(3, "Asya", "Porokh", 10));
-        userMap.put(4, new User(4, "Slavik", "Hivniuk", 55));
     }
 }
