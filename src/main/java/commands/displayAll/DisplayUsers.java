@@ -1,8 +1,9 @@
 package commands.displayAll;
 
 import commands.Command;
-import system.MarketplaceSystem;
-import system.User;
+import commands.Display;
+import commands.system.MarketplaceSystem;
+import commands.system.User;
 
 import java.util.Collection;
 
@@ -10,10 +11,8 @@ public class DisplayUsers implements Command {
 
     @Override
     public void execute(MarketplaceSystem system) {
-        Collection<User> collection = system.getUserMap().values();
+        Collection<User> users = system.getUserMap().values();
 
-        for(User user: collection){
-            System.out.println(user);
-        }
+        new Display().display(users);
     }
 }

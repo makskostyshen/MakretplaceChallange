@@ -1,9 +1,10 @@
 package commands.buy;
 
 import commands.Command;
-import system.MarketplaceSystem;
-import system.Product;
-import system.User;
+import commands.Display;
+import commands.system.MarketplaceSystem;
+import commands.system.Product;
+import commands.system.User;
 
 import java.util.Map;
 
@@ -52,7 +53,7 @@ public class Buy implements Command {
             throw new NotEnoughBalanceException();
         }
         else{
-            System.out.println("purchase is successful");
+            new Display().display("purchase is successful");
         }
     }
 }

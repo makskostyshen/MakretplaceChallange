@@ -1,9 +1,11 @@
 package commands.displayById;
 
 import commands.Command;
-import system.MarketplaceSystem;
-import system.Product;
+import commands.Display;
+import commands.system.MarketplaceSystem;
+import commands.system.Product;
 
+import java.util.Collection;
 import java.util.Map;
 
 public class DisplayProductsByUser implements Command {
@@ -16,7 +18,9 @@ public class DisplayProductsByUser implements Command {
 
     @Override
     public void execute(MarketplaceSystem system) {
-        Map<Product, Integer> boughtProducts = system.getUserById(userId).getBoughtProducts();
-        System.out.println(boughtProducts);
+        Map<Product, Integer> boughtProductsMap = system.getUserById(userId).getBoughtProducts();
+        Collection<Product> boughtProducts = boughtProductsMap.keySet();
+
+        new Display().display(boughtProducts);
     }
 }

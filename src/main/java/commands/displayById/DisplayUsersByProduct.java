@@ -1,13 +1,13 @@
 package commands.displayById;
 
 import commands.Command;
-import system.MarketplaceSystem;
-import system.Product;
-import system.User;
+import commands.Display;
+import commands.system.MarketplaceSystem;
+import commands.system.Product;
+import commands.system.User;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 public class DisplayUsersByProduct implements Command {
 
@@ -20,15 +20,15 @@ public class DisplayUsersByProduct implements Command {
     @Override
     public void execute(MarketplaceSystem system) {
 
-        List<User> usersBoughtProducts = new ArrayList<>();
-        Collection <User> usersAll = system.getUserMap().values();
+        Collection<User> usersBoughtProducts = new ArrayList<>();
+        Collection<User> usersAll = system.getUserMap().values();
 
         for (User user: usersAll){
             if(hasBoughtProduct(user, productId)){
                 usersBoughtProducts.add(user);
             }
         }
-        System.out.println(usersBoughtProducts);
+        new Display().display(usersBoughtProducts);
     }
 
 

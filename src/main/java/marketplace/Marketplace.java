@@ -6,7 +6,16 @@ import commands.displayAll.DisplayProducts;
 import commands.displayAll.DisplayUsers;
 import commands.displayById.DisplayProductsByUser;
 import commands.displayById.DisplayUsersByProduct;
-import system.MarketplaceSystem;
+import commands.system.MarketplaceSystem;
+
+/**
+ * Java practical test challenge: marketplace challenge
+ *
+ * Basic system requirements are made
+ *
+ * @author Maksym Kostyshen
+ *
+ */
 
 public class Marketplace {
 
@@ -23,6 +32,7 @@ public class Marketplace {
 
     public static void main(String[] args) {
         try{
+            //example
             Marketplace marketplace = new Marketplace();
 
             marketplace.executeCommand(new DisplayUsers());
