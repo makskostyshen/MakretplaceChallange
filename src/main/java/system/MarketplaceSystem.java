@@ -28,8 +28,8 @@ public class MarketplaceSystem {
     public MarketplaceSystem(){
         productMap = new HashMap<>();
         userMap = new HashMap<>();
-
-        putInitialValues();
+//
+//        putInitialValues();
     }
 
     private void putInitialValues() {

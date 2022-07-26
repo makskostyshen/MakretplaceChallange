@@ -2,9 +2,9 @@ package commands.buy;
 
 import commands.Command;
 import commands.Display;
-import commands.system.MarketplaceSystem;
-import commands.system.Product;
-import commands.system.User;
+import system.MarketplaceSystem;
+import system.Product;
+import system.User;
 
 import java.util.Map;
 
@@ -24,8 +24,8 @@ public class Buy implements Command {
         User user = system.getUserById(userId);
         Product product = system.getProductById(productId);
 
-        int price = product.getPrice();
-        int newBalance = user.getBalance() - price;
+        double price = product.getPrice();
+        double newBalance = user.getBalance() - price;
 
         makeSureBalanceIsOkay(newBalance);
 
@@ -48,7 +48,7 @@ public class Buy implements Command {
         boughtProducts.put(product, value);
     }
 
-    private void makeSureBalanceIsOkay(int balance){
+    private void makeSureBalanceIsOkay(double balance){
         if(balance < 0){
             throw new NotEnoughBalanceException();
         }

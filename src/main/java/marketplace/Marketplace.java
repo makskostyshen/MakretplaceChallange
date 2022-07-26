@@ -6,7 +6,7 @@ import commands.displayAll.DisplayProducts;
 import commands.displayAll.DisplayUsers;
 import commands.displayById.DisplayProductsByUser;
 import commands.displayById.DisplayUsersByProduct;
-import commands.system.MarketplaceSystem;
+import system.MarketplaceSystem;
 
 /**
  * Java practical test challenge: marketplace challenge
@@ -45,6 +45,14 @@ public class Marketplace {
 
             marketplace.executeCommand(new DisplayUsers());
             marketplace.executeCommand(new DisplayUsersByProduct(2));
+
+            int a = 5;
+            Object[] par = new Object[]{4, 2};
+            System.out.println(par[0].getClass().equals(Number.class));
+            System.out.println(par[0].getClass());
+            System.out.println(Double.parseDouble(par[0].toString()));;
+
+
         }
         catch (Exception e){
             e.printStackTrace();

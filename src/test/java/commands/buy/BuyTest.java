@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import system.MarketplaceSystem;
 import system.Product;
+import system.User;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,6 +20,14 @@ class BuyTest {
     public void initMarketplaceSystem(){
         system = new MarketplaceSystem();
 
+        system.getProductMap().put(1, new Product(1, "Pencil", 45));
+        system.getProductMap().put(2, new Product(2, "Case", 10));
+        system.getProductMap().put(3, new Product(3, "Pen", 20));
+
+        system.getUserMap().put(1, new User(1, "Maks", "Killman", 300));
+        system.getUserMap().put(2, new User(2, "Melissa", "Choppa", 350));
+        system.getUserMap().put(3, new User(3, "Asya", "Porokh", 10));
+
     }
 
     @Test
@@ -28,12 +37,12 @@ class BuyTest {
 
         assertTrue(system.getUserById(1).getBalance() == 280);
 
-        Map<Product, Integer> properBoughtProducts = new HashMap<>();
-        properBoughtProducts.put(createProductById(3), 1);
+        Map<Product, Integer> expectedBoughtProducts = new HashMap<>();
+        expectedBoughtProducts.put(createProductById(3), 1);
 
         Map<Product, Integer> resultingBoughtProducts = system.getUserById(1).getBoughtProducts();
 
-        assertTrue(resultingBoughtProducts.equals(properBoughtProducts));
+        assertTrue(resultingBoughtProducts.equals(expectedBoughtProducts));
     }
 
     @Test
@@ -45,14 +54,14 @@ class BuyTest {
 
         assertTrue(system.getUserById(2).getBalance() == 295);
 
-        Map<Product, Integer> properBoughtProducts = new HashMap<>();
-        properBoughtProducts.put(createProductById(1), 1);
-        properBoughtProducts.put(createProductById(2), 1);
+        Map<Product, Integer> expectedBoughtProducts = new HashMap<>();
+        expectedBoughtProducts.put(createProductById(1), 1);
+        expectedBoughtProducts.put(createProductById(2), 1);
 
 
         Map<Product, Integer> resultingBoughtProducts = system.getUserById(2).getBoughtProducts();
 
-        assertTrue(resultingBoughtProducts.equals(properBoughtProducts));
+        assertTrue(resultingBoughtProducts.equals(expectedBoughtProducts));
     }
 
     @Test
@@ -66,12 +75,12 @@ class BuyTest {
 
         assertTrue(system.getUserById(2).getBalance() == 215);
 
-        Map<Product, Integer> properBoughtProducts = new HashMap<>();
-        properBoughtProducts.put(createProductById(1), 3);
+        Map<Product, Integer> expectedBoughtProducts = new HashMap<>();
+        expectedBoughtProducts.put(createProductById(1), 3);
 
         Map<Product, Integer> resultingBoughtProducts = system.getUserById(2).getBoughtProducts();
 
-        assertTrue(resultingBoughtProducts.equals(properBoughtProducts));
+        assertTrue(resultingBoughtProducts.equals(expectedBoughtProducts));
     }
 
     @Test
