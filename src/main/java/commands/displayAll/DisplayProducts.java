@@ -2,8 +2,8 @@ package commands.displayAll;
 
 import commands.Command;
 import commands.Display;
-import commands.system.MarketplaceSystem;
-import commands.system.Product;
+import system.MarketplaceSystem;
+import system.Product;
 
 import java.util.Collection;
 

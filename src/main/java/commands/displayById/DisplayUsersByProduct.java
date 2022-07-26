@@ -2,9 +2,9 @@ package commands.displayById;
 
 import commands.Command;
 import commands.Display;
-import commands.system.MarketplaceSystem;
-import commands.system.Product;
-import commands.system.User;
+import system.MarketplaceSystem;
+import system.Product;
+import system.User;
 
 import java.util.ArrayList;
 import java.util.Collection;
