@@ -1,12 +1,11 @@
 package commands.add;
 
 import commands.Command;
-import commands.buy.NotEnoughBalanceException;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import system.MarketplaceSystem;
 import system.Product;
-import system.User;
 
 import java.util.HashMap;
 import java.util.Map;

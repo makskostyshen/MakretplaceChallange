@@ -3,11 +3,11 @@ package commands.delete;
 import commands.Command;
 import system.MarketplaceSystem;
 
-public class deleteUser implements Command {
+public class DeleteUser implements Command {
 
     private final int userId;
 
-    public deleteUser(int userId) {
+    public DeleteUser(int userId) {
         this.userId = userId;
     }
 

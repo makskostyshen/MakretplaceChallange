@@ -35,6 +35,19 @@ public class User {
         return boughtProducts;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+        return id == user.id;
+    }
+
+//    @Override
+//    public int hashCode(){
+//        return id;
+//    }
 
     @Override
     public String toString() {
@@ -43,5 +56,7 @@ public class User {
                 "lastName: " + lastName + ", " +
                 "balance: " + balance;
     }
+
+
 
 }

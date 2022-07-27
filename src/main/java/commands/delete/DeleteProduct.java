@@ -7,11 +7,11 @@ import system.User;
 
 import java.util.Collection;
 
-public class deleteProduct implements Command {
+public class DeleteProduct implements Command {
 
     private final int productId;
 
-    public deleteProduct(int productId){
+    public DeleteProduct(int productId){
         this.productId = productId;
     }
 

@@ -57,9 +57,10 @@ class BuyTest {
         Map<Product, Integer> expectedBoughtProducts = new HashMap<>();
         expectedBoughtProducts.put(createProductById(1), 1);
         expectedBoughtProducts.put(createProductById(2), 1);
-
+        System.out.println(expectedBoughtProducts);
 
         Map<Product, Integer> resultingBoughtProducts = system.getUserById(2).getBoughtProducts();
+        System.out.println(resultingBoughtProducts);
 
         assertTrue(resultingBoughtProducts.equals(expectedBoughtProducts));
     }
