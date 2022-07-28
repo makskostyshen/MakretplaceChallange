@@ -8,11 +8,11 @@ public class User {
     private final int id;
     private final String firstName;
     private final String lastName;
-    private int balance;
+    private double balance;
     private final Map<Product, Integer> boughtProducts;
 
 
-    public User(int id, String firstName, String lastName, int balance) {
+    public User(int id, String firstName, String lastName, double balance) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -21,12 +21,12 @@ public class User {
     }
 
 
-    public void setBalance(int balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 
 
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
 
@@ -35,6 +35,19 @@ public class User {
         return boughtProducts;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+        return id == user.id;
+    }
+
+//    @Override
+//    public int hashCode(){
+//        return id;
+//    }
 
     @Override
     public String toString() {
@@ -43,5 +56,7 @@ public class User {
                 "lastName: " + lastName + ", " +
                 "balance: " + balance;
     }
+
+
 
 }
