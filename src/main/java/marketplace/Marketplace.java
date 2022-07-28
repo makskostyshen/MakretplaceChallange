@@ -15,7 +15,7 @@ import system.MarketplaceSystem;
 /**
  * Java practical test challenge: marketplace challenge
  *
- * Basic system requirements are made
+ * Medium system requirements are made
  *
  * @author Maksym Kostyshen
  *
@@ -36,25 +36,6 @@ public class Marketplace {
 
     public static void main(String[] args) {
         try{
-            //example
-            /*Marketplace marketplace = new Marketplace();
-
-            marketplace.executeCommand(new DisplayUsers());
-            marketplace.executeCommand(new DisplayProducts());
-
-            marketplace.executeCommand(new Buy(1, 1));
-            marketplace.executeCommand(new Buy(1, 2));
-            marketplace.executeCommand(new Buy(3, 2));
-            marketplace.executeCommand(new DisplayProductsByUser(1));
-
-            marketplace.executeCommand(new DisplayUsers());
-            marketplace.executeCommand(new DisplayUsersByProduct(2));
-
-            int a = 5;
-            Object[] par = new Object[]{4, 2};
-            System.out.println(par[0].getClass().equals(Number.class));
-            System.out.println(par[0].getClass());
-            System.out.println(Double.parseDouble(par[0].toString()));;*/
 
             Marketplace marketplace = new Marketplace();
 
